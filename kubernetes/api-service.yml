@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "api"
+  labels:
+    app.kubernetes.io/instance: "bookmarks-app"
+    app.kubernetes.io/component: "api"
+    hasuraService: custom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: "bookmarks-app"
+      app.kubernetes.io/component: "api"
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: "bookmarks-app"
+        app.kubernetes.io/component: "api"
+    spec:
+      containers:
+      - name: "api"
+        image: hasura/graphql-engine
+        env:
+        - name: HASURA_GRAPHQL_DATABASE_URL
+          value: postgres://hasurauser:hasurapassword@kpatel20538-postgresql.kpatel20538.svc.cluster.local:5432/postgres
+        - name: HASURA_GRAPHQL_ENABLE_CONSOLE
+          value: "true"
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 200m
+            memory: 256Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "api"
+  labels:
+    app.kubernetes.io/instance: "bookmarks-app"
+    app.kubernetes.io/component: "api"
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: "bookmarks-app"
+    app.kubernetes.io/component: "api"
