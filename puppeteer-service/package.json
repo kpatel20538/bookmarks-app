@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "generic-pool": "^3.7.1",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin": "^7.0.1",
+    "koa-body": "^4.2.0",
+    "koa": "^2.13.0",
+    "minio": "^7.0.16",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^5.0.0",
+    "slugify": "^1.4.4"
+  }
+}
