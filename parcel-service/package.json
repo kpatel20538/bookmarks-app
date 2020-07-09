@@ -25,6 +25,7 @@
     "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
-    "parcel": "next"
+    "parcel": "next",
+    "graphql-import-macro": "^1.0.0"
   }
 }
