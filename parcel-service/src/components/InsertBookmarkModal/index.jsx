@@ -38,7 +38,7 @@ const getError = (value, validator) => {
 const formatTitle = (value) => value.trim();
 const formatUrl = (value) => {
   const val = value.trim();
-  if (!val.startsWith("http://") && !val.startsWith("http://")) {
+  if (!val.startsWith("http://") && !val.startsWith("https://")) {
     return `https://${val}`;
   }
   return val;
@@ -82,18 +82,19 @@ const InsertBookmarkModal = ({ active, onClose, query }) => {
             color="success"
             state={loading ? "loading" : null}
             disabled={Object.values(errors).some((error) => error)}
-            onClick={async () => {
-              await insertBookmark({
+            onClick={() => {
+              insertBookmark({
                 variables: {
                   title: formatTitle(values.title),
                   url: formatUrl(values.url),
                 },
+              }).then(() => {
+                setValues({
+                  title: "",
+                  url: "",
+                });
+                onClose();
               });
-              setValues({
-                title: "",
-                url: "",
-              });
-              onClose();
             }}
           >
             {static.affirm}
