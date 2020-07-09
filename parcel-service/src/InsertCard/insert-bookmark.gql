@@ -1,0 +1,5 @@
+mutation InsertBookmark($input: Bookmarks_insert_input!) {
+  insert_Bookmarks_one(object: $input) {
+    id
+  }
+}
