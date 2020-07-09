@@ -1,0 +1,5 @@
+mutation InsertBookmark($url: String!, $title: String!) {
+  insert_Bookmarks_one(object: { url: $url, title: $title, tags: [] }) {
+    id
+  }
+}

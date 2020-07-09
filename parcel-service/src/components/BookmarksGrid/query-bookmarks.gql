@@ -1,0 +1,10 @@
+query {
+  Bookmarks {
+    id
+    thumbnail
+    etag
+    tags
+    title
+    url
+  }
+}

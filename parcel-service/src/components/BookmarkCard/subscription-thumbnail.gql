@@ -1,0 +1,6 @@
+subscription SubscriptionThumbnail($id: Int!) {
+  Bookmarks_by_pk(id: $id) {
+    etag
+    thumbnail
+  }
+}

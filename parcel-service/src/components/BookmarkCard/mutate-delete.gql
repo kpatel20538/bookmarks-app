@@ -1,0 +1,5 @@
+mutation DeleteBookmark($id: Int!) {
+  delete_Bookmarks_by_pk(id: $id) {
+    id
+  }
+}

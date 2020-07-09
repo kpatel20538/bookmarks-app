@@ -1,0 +1,30 @@
+{
+  "name": "parcel-service",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel serve ./src/index.html --https ",
+    "build": "parcel build ./src/index.html --public-url /static"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.0.0-rc.10",
+    "@apollo/link-ws": "^2.0.0-beta.3",
+    "graphql": "^15.3.0",
+    "rbx": "^2.2.0",
+    "react-crossfade-image": "^1.2.0",
+    "react-dom": "^16.13.1",
+    "react-flip-toolkit": "^7.0.12",
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "react-router": "^5.2.0",
+    "react": "^16.13.1",
+    "subscriptions-transport-ws": "^0.9.16"
+  },
+  "devDependencies": {
+    "parcel": "next",
+    "graphql-import-macro": "^1.0.0"
+  }
+}
