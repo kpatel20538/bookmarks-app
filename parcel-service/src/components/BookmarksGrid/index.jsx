@@ -36,7 +36,7 @@ const onExit = (el, index, removeElement) => {
   };
 };
 
-const List = () => {
+const BookmarksGrid = () => {
   const { data, loading } = useQuery(QUERY_BOOKMARKS_AST);
 
   return (
@@ -63,12 +63,6 @@ const List = () => {
       </Column.Group>
     </Flipper>
   );
-};
-
-// ---
-
-const BookmarksGrid = () => {
-  return <List />;
 };
 
 export default BookmarksGrid;
