@@ -1,6 +1,0 @@
-subscription ThumbnailSubscription($id: Int!) {
-  Bookmarks_by_pk(id: $id) {
-    id
-    thumbnail
-  }
-}

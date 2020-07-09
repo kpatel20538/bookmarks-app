@@ -1,9 +1,0 @@
-query BookmarksQuery {
-  Bookmarks(order_by: {id: desc}) {
-    id
-    title
-    url
-    tags
-    thumbnail
-  }
-}
