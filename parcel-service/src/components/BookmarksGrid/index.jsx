@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { Flipped, Flipper, spring } from "react-flip-toolkit";
-import { Column, PageLoader } from "rbx";
+import { Column, PageLoader, Button } from "rbx";
 
 import BookmarkCard from "/components/BookmarkCard";
+import InsertBookmarkModal from "/components/InsertBookmarkModal";
 
 import QUERY_BOOKMARKS from "./query-bookmarks.gql";
+import static from "./static.yaml";
 
 const QUERY_BOOKMARKS_AST = gql(QUERY_BOOKMARKS);
 
@@ -38,9 +40,14 @@ const onExit = (el, index, removeElement) => {
 
 const BookmarksGrid = () => {
   const { data, loading } = useQuery(QUERY_BOOKMARKS_AST);
-
+  const [isInsertModalActive, setIsInsertModalActive] = useState(false);
   return (
     <Flipper flipKey={JSON.stringify(data)}>
+      <Button.Group>
+        <Button color="info" onClick={() => setIsInsertModalActive(true)}>
+          {static.insertBookmark}
+        </Button>
+      </Button.Group>
       <Column.Group multiline>
         <PageLoader active={loading} />
         {!loading &&
@@ -61,6 +68,11 @@ const BookmarksGrid = () => {
             </Flipped>
           ))}
       </Column.Group>
+      <InsertBookmarkModal
+        active={isInsertModalActive}
+        onClose={() => setIsInsertModalActive(false)}
+        query={QUERY_BOOKMARKS_AST}
+      />
     </Flipper>
   );
 };

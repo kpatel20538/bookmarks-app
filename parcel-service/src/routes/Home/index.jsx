@@ -7,8 +7,8 @@ import static from './static.yaml';
 
 const TitleBar = () => (
   <Block textAlign="centered">
-    <Title>{static.appTitle}</Title>
-    <Title subtitle>{static.appSubtitle}</Title>
+    <Title>{static.title}</Title>
+    <Title subtitle>{static.subtitle}</Title>
   </Block>
 );
 

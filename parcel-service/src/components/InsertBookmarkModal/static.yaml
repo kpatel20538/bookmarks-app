@@ -1,0 +1,12 @@
+title: Add Bookmark
+affirm: Add
+deny: Cancel
+labels:
+  title: Title
+  url: URL
+placeholders: 
+  title: "e.g. Google"
+  url: "e.g. http://google.com"
+errors:
+  required: Required
+  invalid: Invalid
