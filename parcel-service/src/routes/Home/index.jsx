@@ -1,7 +1,7 @@
 import React from "react";
 import { Section, Container, Title, Block } from "rbx";
 
-import BookmarksGrid from './components/BookmarksGrid';
+import BookmarksGrid from "/components/BookmarksGrid";
 
 import static from './static.yaml';
 
