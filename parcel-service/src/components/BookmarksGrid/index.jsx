@@ -56,7 +56,7 @@ const BookmarksGrid = () => {
                 tablet={{ size: "half" }}
                 desktop={{ size: "one-quarter" }}
               >
-                <BookmarkCard bookmark={bookmark} />
+                <BookmarkCard bookmark={bookmark} query={QUERY_BOOKMARKS_AST} />
               </Column>
             </Flipped>
           ))}
